@@ -23,5 +23,6 @@
   echo '<table><tr>';
   echo '<td><img src="' . $data . '" /></td>';
   echo "<td><img style='display:block; width:" . $imsize[0] . "px; height:" . $imsize[1] . "px;' id='seg' src='data:image/jpeg;base64, " . $result[0][1] . "' /></td>";
+  echo '<td><div style="position:relative; left: 0; top: 0;"><img src="' . $data . '" style="position: relative; top: 0; left: 0;"/>' . "<img style='position: absolute; left: 0; top: 0; opacity: 0.6; display:block; width:" . $imsize[0] . "px; height:" . $imsize[1] . "px;' id='seg' src='data:image/jpeg;base64, " . $result[0][1] . "' /></div></td>";
   echo '</tr></table>';
 ?>

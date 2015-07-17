@@ -1,8 +1,12 @@
 <?php
   // Usage: http://10.1.94.128:8000/~rgirdhar/memex/demos/0001_SegService/index.php?url=http://10.1.94.128:8000/~rgirdhar/memex/dataset/0001_Backpage/Images/ImagesTexas/Texas_2012_10_10_1349841918000_4_0.jpg
   //$url = 'https://cmu.memexproxy.com/segment';
-  $url = 'http://localhost:8888/IST_fullImg';
   $data = $_GET["url"];
+  $method = $_GET["method"];
+  $url = 'http://localhost:8888/IST_fullImg_ITQ';
+  if (strcmp($method, "lsh") == 0) {
+    $url = 'http://localhost:8888/IST_fullImg';
+  }
 //  $data = 'http://10.1.94.128:8000/~rgirdhar/memex/dataset/0001_Backpage/Images/ImagesTexas/Texas_2013_8_27_1377592240000_6_1.jpg';
 
   $options = array(
@@ -23,11 +27,11 @@
   echo "Query Image<br/>";
   echo '<img width="200px" src="' . $data . '" /><hr />';
 
-  $elPerRow = 5;
+  $elPerRow = 20;
   echo "<table><tr>";
   $cur_row = 0;
   for ($i = 0; $i < count($result); $i++) {
-    echo '<td><img width="200px" src="' . $result[$i][0] . '" /><br/>' . $result[$i][1] . '<td>';
+    echo '<td><img height="50px" src="' . $result[$i][0] . '" /><br/>' . $result[$i][1] . '<td>';
     $cur_row += 1;
     if ($cur_row >= $elPerRow) {
       $cur_row = 0;

@@ -23,11 +23,11 @@
   echo "Query Image<br/>";
   echo '<img width="200px" src="' . $data . '" /><hr />';
 
-  $elPerRow = 5;
+  $elPerRow = 20;
   echo "<table><tr>";
   $cur_row = 0;
   for ($i = 0; $i < count($result); $i++) {
-    echo '<td><img width="200px" src="' . $result[$i][0] . '" /><br/>' . $result[$i][1] . '<td>';
+    echo '<td><img width="50px" src="' . $result[$i][0] . '" /><br/>' . $result[$i][1] . '<td>';
     $cur_row += 1;
     if ($cur_row >= $elPerRow) {
       $cur_row = 0;

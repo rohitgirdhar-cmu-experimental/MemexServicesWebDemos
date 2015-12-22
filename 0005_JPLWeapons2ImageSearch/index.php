@@ -3,9 +3,11 @@
   //$url = 'https://cmu.memexproxy.com/segment';
   $data = $_GET["url"];
   $method = $_GET["method"];
-  if (strcmp($method, "full") == 0) {
+  if (strcmp($method, "fg") == 0) {
+    $url = 'http://localhost:8888/JPLWeapons2_fgImg';
+  } elseif (strcmp($method, "full") == 0) {
     $url = 'http://localhost:8888/JPLWeapons2_fullImg';
-  } else { // default
+  } else { // default or 'bg'
     $url = 'http://localhost:8888/JPLWeapons2_bgImg';
   }
 
